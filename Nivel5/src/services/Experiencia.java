@@ -5,7 +5,7 @@ public class Experiencia {
 
     public static int calcularNivel(int experiencia) {
         int nivel = experiencia / EXPERIENCIA_MAXIMA + 1;
-        return nivel > 99 ? 99 : nivel; 
+        return nivel > 99 ? 99 : nivel;
     }
 
     public static int calcularExperienciaParaProximoNivel(int experiencia) {
