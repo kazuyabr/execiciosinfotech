@@ -27,12 +27,12 @@ public class Aventura {
         Random random = new Random();
         int chanceEvento = random.nextInt(100);
 
-        if (chanceEvento < 30) { // 30% de chance de encontrar um objeto mágico
+        if (chanceEvento < 30) {
             int indiceObjeto = random.nextInt(objetosMagicos.size());
             String objetoMagicoEncontrado = objetosMagicos.get(indiceObjeto);
             personagem.adicionarItemInventario(objetoMagicoEncontrado);
             System.out.println(personagem.getNome() + " encontrou um objeto magico: " + objetoMagicoEncontrado);
-        } else if (chanceEvento >= 30 && chanceEvento < 60) { // 30% de chance de combate
+        } else if (chanceEvento >= 30 && chanceEvento < 60) {
             combater(personagem);
         } else {
             System.out.println(personagem.getNome() + " explorou, mas nao encontrou nada desta vez.");
@@ -41,7 +41,7 @@ public class Aventura {
 
     private void combater(Personagem personagem) {
         Random random = new Random();
-        int forcaMonstro = random.nextInt(50) + 50; // Força do monstro varia entre 50 e 99
+        int forcaMonstro = random.nextInt(50) + 50; 
         int danoPersonagem = personagem.atacar();
         int danoMonstro = random.nextInt(forcaMonstro);
     

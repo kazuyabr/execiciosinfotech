@@ -38,24 +38,24 @@ public class Aventura {
         while (true) {
             int chanceEvento = random.nextInt(100);
 
-            if (chanceEvento < 30) { // 30% de chance de encontrar um objeto mágico
+            if (chanceEvento < 30) {
                 int indiceObjeto = random.nextInt(objetosMagicos.size());
                 String objetoMagicoEncontrado = objetosMagicos.get(indiceObjeto);
                 personagem.adicionarItemInventario(objetoMagicoEncontrado);
                 System.out.println(personagem.getNome() + " encontrou um objeto magico: " + objetoMagicoEncontrado);
-            } else if (chanceEvento >= 30 && chanceEvento < 60) { // 30% de chance de combate
+            } else if (chanceEvento >= 30 && chanceEvento < 60) {
                 try {
                     combater(personagem);
                 } catch (NivelBaixoException e) {
                     throw new NivelBaixoException(personagem.getNome());
                 } catch (DueloInvalidoException e) {
-                    System.out.println(e.getMessage()); // Exibe a mensagem da exceção, mas continua a exploração
+                    System.out.println(e.getMessage());
                 }
             } else {
                 System.out.println(personagem.getNome() + " explorou, mas nao encontrou nada desta vez.");
             }
 
-            // Verifica se o personagem atingiu o nível máximo
+            
             if (personagem.getLevel() >= 99) {
                 break;
             }
@@ -64,7 +64,7 @@ public class Aventura {
 
     private void combater(Personagem personagem) throws NivelBaixoException, DueloInvalidoException {
         Random random = new Random();
-        int forcaMonstro = random.nextInt(50) + 50; // Força do monstro varia entre 50 e 99
+        int forcaMonstro = random.nextInt(50) + 50; 
         int danoPersonagem = personagem.atacar();
         int danoMonstro = random.nextInt(forcaMonstro);
     
@@ -75,11 +75,11 @@ public class Aventura {
             System.out.println(personagem.getNome() + " derrotou o monstro!");
             personagem.ganharExperiencia(100);
             
-            // Verifica se o personagem subiu de nível
+            
             if (personagem.verificarLevelUp()) {
                 System.out.println(personagem.getNome() + " subiu para o nível " + personagem.getLevel() + "!");
                 
-                // Tenta duelar após cada level up
+                
                 try {
                     Arena.duelar(personagem, personagem);
                 } catch (NivelBaixoException e) {

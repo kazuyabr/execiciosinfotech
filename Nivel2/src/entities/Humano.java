@@ -161,7 +161,7 @@ public class Humano {
         
         if (this.magia.equals("Pouca")) {
             return this.inteligencia * 2;
-        } else if (this.magia.equals("Média")) {
+        } else if (this.magia.equals("Media")) {
             return this.inteligencia * 3;
         } else {
             return this.inteligencia * 4;

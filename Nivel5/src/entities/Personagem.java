@@ -56,7 +56,7 @@ public abstract class Personagem implements Lutador {
 
     public void ganharExperiencia(int experienciaGanha) {
         this.experiencia += experienciaGanha;
-        this.experiencia = Experiencia.limitarExperiencia(this.experiencia); // Limita a experiência máxima
+        this.experiencia = Experiencia.limitarExperiencia(this.experiencia);
 
         this.level = Experiencia.calcularNivel(this.experiencia);
     }
@@ -67,14 +67,14 @@ public abstract class Personagem implements Lutador {
     
         while (vida > 0 && monstro.getVida() > 0) {
             int danoPersonagem = atacar();
-            int danoMonstro = monstro.getForca(); // O monstro sempre ataca com sua força
+            int danoMonstro = monstro.getForca();
     
             monstro.receberDano(danoPersonagem);
             System.out.println(nome + " ataca " + monstro.getNome() + " causando " + danoPersonagem + " de dano.");
     
             if (monstro.getVida() <= 0) {
                 System.out.println(monstro.getNome() + " foi derrotado!");
-                ganharExperiencia(100); // Ganha 100 de experiência por derrotar o monstro
+                ganharExperiencia(100); 
                 break;
             }
     

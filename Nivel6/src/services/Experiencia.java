@@ -5,7 +5,7 @@ public class Experiencia {
 
     public static int calcularNivel(int experiencia) {
         int nivel = experiencia / EXPERIENCIA_MAXIMA + 1;
-        return nivel > 99 ? 99 : nivel; // Limita o nível máximo a 99
+        return nivel > 99 ? 99 : nivel; 
     }
 
     public static int calcularExperienciaParaProximoNivel(int experiencia) {
@@ -22,7 +22,7 @@ public class Experiencia {
     }
 
     public static int calcularExperienciaParaMonstro(int nivelPersonagem) {
-        // Fórmula exponencial para aumentar a experiência que os monstros dão com base no nível do personagem
+        
         return (int) (50 * Math.pow(1.1, nivelPersonagem - 1));
     }
 

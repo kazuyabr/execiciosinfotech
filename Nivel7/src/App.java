@@ -12,8 +12,8 @@ public class App {
         Humano humano = new Humano("Aragorn");
         Elfo elfo = new Elfo("Legolas");
 
-        // Exibindo os atributos anteriores e as magias
-        System.out.println("Anão:");
+        
+        System.out.println("Anao:");
         System.out.println("Nome: " + anao.getNome() + "\nLevel: " + anao.getLevel() + "\nVida: " + anao.getVida() + "\nForça: " + anao.getForca() + "\nMagia: " + anao.getMagia() + "\nAgilidade: " + anao.getAgilidade() + "\nInteligencia: " + anao.getInteligencia());
         System.out.println();
 

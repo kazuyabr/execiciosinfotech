@@ -57,7 +57,7 @@ public class Aventura {
 
             if (personagem.verificarLevelUp()) {
                 System.out.println(personagem.getNome() + " subiu para o nível " + personagem.getLevel() + "!");
-                break; // Encerra a aventura quando o personagem sobe 1 nível
+                break; 
             }
         }
     }

@@ -33,7 +33,7 @@ public class App {
 
             try {
                 int opcao = scanner.nextInt();
-                scanner.nextLine(); // Consumir quebra de linha
+                scanner.nextLine();
 
                 switch (opcao) {
                     case 1:
@@ -82,19 +82,19 @@ public class App {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, digite um número.");
-                scanner.nextLine(); // Limpar o buffer do scanner
+                scanner.nextLine();
             } catch (VidaBaixaException | NivelBaixoException | DueloInvalidoException e) {
                 System.out.println("Cuidado: " + e.getMessage());
             }
         }
-        scanner.close(); // Fechar o scanner ao encerrar a aplicaçao
+        scanner.close();
     }
 
     private static Personagem criarPersonagem(Scanner scanner) {
         System.out.println("Escolha a raca do seu personagem:");
         System.out.println("1 - Elfo\t2 - Humano\t3 - Anao");
         int raca = scanner.nextInt();
-        scanner.nextLine(); // Consumir quebra de linha
+        scanner.nextLine();
 
         System.out.print("Digite o nome do seu personagem: ");
         String nome = scanner.nextLine();
@@ -114,7 +114,7 @@ public class App {
 
     public static Personagem criarNPCComRacaRestante(Personagem personagemCriado) {
         Random random = new Random();
-        String nomeNPC = "NPC_" + random.nextInt(1000); // Nome aleatório para o NPC
+        String nomeNPC = "NPC_" + random.nextInt(1000); 
     
         if (personagemCriado instanceof Humano) {
             return new Elfo(nomeNPC);
