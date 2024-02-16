@@ -2,9 +2,9 @@ package services;
 
 public class Experiencia {
     private static final int EXPERIENCIA_MAXIMA = 1000;
-
+    //usar h2 para salvar dados em memória (ou usar o bd q quiser)
     public static int calcularNivel(int experiencia) {
-        int nivel = experiencia / EXPERIENCIA_MAXIMA + 1;
+        int nivel = experiencia / EXPERIENCIA_MAXIMA + 1;// a experiencia que sobrou deve passar tambem com o próximo nivel.
         return nivel > 99 ? 99 : nivel;
     }
 
